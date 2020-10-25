@@ -2,12 +2,13 @@
   <nav class="row navbar navbar-expand-lg navbar-dark  bg-secondary fixed-top px-5">
     <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span></button>
-    <router-link class="navbar-link" to="/wall"><img class="imglogo" src="../assets/icon-left-font-monochrome-white.png" alt="Logo Groupomania" /></router-link>
+   <router-link class="navbar-link" to="/wall"><img class="imglogo" src="../assets/icon-left-font-monochrome-white.png" alt="Logo Groupomania" /></router-link>
  
   <div class="collapse navbar-collapse justify-content navbar-dark  bg-secondary" id="navbarToggle">
+    
       <ul class="navbar-nav">
         <li class="nav-item mx-1" v-if="user.isAdmin == true ">
-          <router-link  to="/WallAdmin">
+          <router-link  class="nav-link " to="/WallAdmin">
             <button type="button" class="btn btn-primary">
           
               Administration
@@ -18,7 +19,7 @@
       
    
         <li class="nav-item mx-1" v-if="user.token !== null">
-          <router-link  to="/wall">
+          <router-link class="nav-link " to="/wall">
             <button type="button" class="btn btn-secondary">
           
               Message
@@ -26,7 +27,7 @@
           </router-link>
         </li>
         <li class="nav-item mx-1" v-if="user.token == null">
-          <router-link  to="/signup">
+          <router-link  class="nav-link " to="/signup">
             <button type="button" class="btn btn-secondary">
           
               Créer un compte
@@ -34,7 +35,7 @@
           </router-link>
         </li>
         <li class="nav-item mx-1" v-if="user.token == null">
-          <router-link  to="/login">
+          <router-link  class="nav-link " to="/login">
             <button type="button" class="btn btn-danger">
          
               Se connecter
@@ -42,7 +43,7 @@
           </router-link>
         </li>
         <li class="nav-item mx-1" v-if="user.token !== null">
-          <router-link  to="/user">
+          <router-link class="nav-link "  to="/user">
             <button type="button" class="btn btn-secondary">
           
              {{ user.username }}
@@ -90,7 +91,7 @@ export default {
 nav {
   position: fixed;
   top: 0;
-  max-height : 5rem;
+
 }
 .imglogo{
   width: 40%;
@@ -109,13 +110,13 @@ margin-left: 90%;
   width: 80% ;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
   .cadre {
     margin-top: 3rem !important;
     width: 90% !important;
   }
- .imglogo {
+ /*.imglogo {
    visibility: hidden;
-  }
+  } */
 }  
 </style>
