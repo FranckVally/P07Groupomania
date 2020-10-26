@@ -1,5 +1,5 @@
 <template>
-  <div class="card mb-4 w-75 mx-auto">
+  <div class="card mb-4  mx-auto">
     <div class="card-header  d-flex justify-content-between mx-2 my-2">
       <div> contributeur :<strong class="text"> {{post.User.username}}</strong> le <strong class="text">{{post.createdAt | moment("from") }}</strong></div>
       <div class="dropdown mx-1" v-if="user.isAdmin==true || user.username == post.User.username">
@@ -79,7 +79,6 @@ export default {
   border: black 3px solid !important;
   border-radius: 30px;
   background-color: #c9c4c4;
-  width: 60%;
   margin: auto;
 }
 .text{

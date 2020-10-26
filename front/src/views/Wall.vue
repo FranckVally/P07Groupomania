@@ -43,7 +43,6 @@ export default {
           Authorization: "Bearer " + localStorage.getItem("token")
         }
       })
-      //.get("http://localhost:3000/api/post",this.$store.state.headerParams)
       .then(response => {
         console.log("post", response.data);
         this.allPosts = response.data;
@@ -65,7 +64,6 @@ export default {
 }
 .block-post {
   background-color: #c9c4c4;
-  width: 60%;
   margin: auto;
   padding: 1%;
   border: black 3px solid !important;

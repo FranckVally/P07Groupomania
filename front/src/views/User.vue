@@ -324,6 +324,7 @@ h1 {
   .cadre {
     width: 90%;
     margin-top: 3.8rem !important;
+     margin-bottom: 3.8rem !important;
    
   }
 }

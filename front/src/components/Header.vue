@@ -119,5 +119,9 @@ margin-left: 90%;
  .imglogo {
    visibility: hidden;
   } 
+.navbar-nav{
+  margin-top: -4rem;
+}
+
 }  
 </style>
