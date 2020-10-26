@@ -320,9 +320,11 @@ h1 {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
   .cadre {
     width: 90%;
+    margin-top: 3.8rem !important;
+   
   }
 }
 </style>

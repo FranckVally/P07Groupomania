@@ -1,6 +1,6 @@
 <template>
   
-        <div class="card mb-4 w-75 mx-auto">
+        <div class="card mb-4 mx-auto">
         
         <h1>Bonjour {{ user.username }} l'Administrateur</h1>
         <div class="row">
@@ -16,7 +16,7 @@
           </div>
           <div class="col-6">
             <!--  avatar present-->
-            <div class="card-img-top w-75 mx-auto" v-if="user.avatarUrl">
+            <div class="card-img-top  mx-auto" v-if="user.avatarUrl">
               <div v-if="!contentPost.imageData.length > 0">
                 <p>Avatar actuel</p>
                 <img :src="user.avatarUrl" alt="..." class="w-75 center" />
@@ -113,8 +113,7 @@
           </div>
         </div>
         <!--fin changePassword-->
-      </div> 
-    
+      </div>    
 </template>
 
 <script>
@@ -284,12 +283,16 @@ export default {
   border: black 3px solid !important;
   border-radius: 20px;
   background-color: #c9c4c4;
-  width: 70%;
-  margin: auto;
+  width: 80%;
+   margin: 2rem auto;
 }
 h1 {
   margin-top: 5%;
   text-align: center;
+  font-size: 1.5rem;
+}
+h2{
+  font-size: 1.2rem;
 }
 
 .main {
@@ -301,9 +304,10 @@ h1 {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
   .cadre {
     width: 90%;
+
   }
 }
 </style>

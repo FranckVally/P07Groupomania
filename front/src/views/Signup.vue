@@ -26,8 +26,6 @@
               id="inputUsername"
               v-model="dataSignup.username"
             />
-
-            
           </div>
 
           <div class="form-group">

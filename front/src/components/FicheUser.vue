@@ -1,7 +1,7 @@
 <!-- ATTENTION ICI post definie la fiche de chaque utilisateur j'ai réutiliser la page Post pour crée une fiche utilisateur !-->
 <template>
-  <div class="card mb-4 w-75 mx-auto">
-    <div class="card-header  d-flex justify-content-between">
+  <div class="card mb-4  mx-auto">
+    <div class="card-header  d-flex justify-content-between mx-2 my-2">
       <div class="col-6">
         <h3>Utilisateur</h3>
         {{ post.username }}
@@ -16,29 +16,29 @@
         <div class="card-text" v-if="post.content !== 'null'">
           <p class="mb-0">{{ post.content }}</p>
         </div>
-        <div class="card-img-top w-50 mx-auto" v-if="post.avatarUrl">
-          <img :src="post.avatarUrl" alt="..." class="w-50" />
+        <div class="card-img-top mx-auto" v-if="post.avatarUrl">
+          <img :src="post.avatarUrl" alt="..." class="w-100" />
         </div>
       </div>
     </div>
 
-  <div class="card-header d-flex justify-content-between my-2">
+  <div class="card d-flex justify-content-between mx-auto my-2 ">
     <!--  Bouton suppression  compte-->
-      <div class="col-6">
+      <div class="px-1">
         <button
           type="button"
-          class="btn btn-danger white d-block"
+          class="btn btn-danger white d-block my-2  mx-auto"
           @click="deleteUser"
         >
-          Supprimer le compte
+          Supprimer compte
         </button>
       </div>
 
        <!--  Bouton suppression  Avatar-->
-      <div class="col-6">
+      <div class=" px-1">
         <button
           type="button"
-          class="btn btn-danger white d-block"
+          class="btn btn-danger white d-block my-2 mx-auto"
           @click="deleteAvatar"
         >
           Supprimer l'avatar
@@ -130,11 +130,22 @@ export default {
   border: black 3px solid !important;
   border-radius: 30px;
   background-color: #c9c4c4;
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 .text {
   color: #fd2d01;
+}
+h1 {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+h2{
+  font-size: 1.2rem;
+}
+h3{
+  font-size: 1rem;
 }
 .card-header {
   padding: 1%;
@@ -142,10 +153,12 @@ export default {
   border: black 1px solid !important;
   border-radius: 30px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
   .cadre {
+   
     margin-top: 3rem !important;
     width: 90% !important;
   }
+  
 }
 </style>

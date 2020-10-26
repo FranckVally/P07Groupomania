@@ -1,8 +1,8 @@
 <template>
   <div class="card mb-4 w-75 mx-auto">
-    <div class="card-header d-flex justify-content-between">
-      <div> contributeur :<strong class="text">{{post.User.username}}</strong> le <strong class="text">{{post.createdAt | moment("from") }}</strong></div>
-      <div class="dropdown" v-if="user.isAdmin==true || user.username == post.User.username">
+    <div class="card-header  d-flex justify-content-between mx-2 my-2">
+      <div> contributeur :<strong class="text"> {{post.User.username}}</strong> le <strong class="text">{{post.createdAt | moment("from") }}</strong></div>
+      <div class="dropdown mx-1" v-if="user.isAdmin==true || user.username == post.User.username">
         <svg class="bi bi-three-dots dropdown-toggle" id="dropdownMenuPost"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
           width="1.2em" height="1.2em" viewBox="0 0 15 15" fill="currentColor">
           <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
@@ -29,7 +29,7 @@
         <img :src="post.attachement" alt="..." class="w-100" />
       </div>
 
-       <div class="card-text bg-light my-2 d-flex justify-content-between" v-if="post.content!=='null'">
+       <div class="card-text bg-light  d-flex justify-content-between mx-2 my-2" v-if="post.content!=='null'">
         <p class="mb-0">  {{post.content}}  </p>
       </div>
 
