@@ -1,11 +1,17 @@
 <template>
-  <div class="row navbar navbar-expand-lg navbar-dark fixed-bottom  bg-secondary text-white center footer">
-  
-    <p  class="text-uppercase mx-auto"  v-if="user.token !== null">Notre entreprise GROUPOMANIA compte sur vous {{ user.username }}  </p>
- <router-link to="/wall"><img class="logobaspage" src="../assets/icon-bas-page.png" alt="Logo Groupomania" /></router-link>
+  <div
+    class="row navbar navbar-expand-lg navbar-dark fixed-bottom bg-secondary text-white center footer"
+  >
+    <p class="text-uppercase mx-auto" v-if="user.token !== null">
+      Notre entreprise GROUPOMANIA compte sur vous {{ user.username }}
+    </p>
+    <router-link to="/wall"
+      ><img
+        class="logobaspage"
+        src="../assets/icon-bas-page.png"
+        alt="Logo Groupomania"
+    /></router-link>
   </div>
-
-  
 </template>
 
 <script>
@@ -20,27 +26,20 @@ export default {
 </script>
 
 <style scope>
-
-.logobaspage{
+.logobaspage {
   height: 2rem;
 }
 
-
 @media screen and (max-width: 992px) {
- 
-  .logobaspage{
-
-  padding-bottom: 1rem;
-}
+  .logobaspage {
+    padding-bottom: 1rem;
+  }
   .footer {
-   height: 2rem;
+    height: 2rem;
   }
 
-
- .text-uppercase {
-   visibility: hidden;
-   
+  .text-uppercase {
+    visibility: hidden;
   }
-} 
-
+}
 </style>

@@ -1,119 +1,103 @@
 <template>
-  
-        <div class="card mb-4 mx-auto">
-        
-        <h1>Bonjour {{ user.username }} l'Administrateur</h1>
-        <div class="row">
-          <div class="col-sm">
-            <h2>Email :</h2>
-            <p>{{ user.email }}</p>
-            <h2>Role :</h2>
-            <p v-if="user.isAdmin !== false">Administrateur</p>
-            <p v-if="user.isAdmin == false">Utilisateur</p>
-
-            
-            
-          </div>
-          <div class="col-6">
-            <!--  avatar present-->
-            <div class="card-img-top  mx-auto" v-if="user.avatarUrl">
-              <div v-if="!contentPost.imageData.length > 0">
-                <p>Avatar actuel</p>
-                <img :src="user.avatarUrl" alt="..." class="w-75 center" />
-              </div>
-            </div>
-            <!-- fin present avatar-->
-
-            <!-- ajout avatar-->
-            <form enctype="multipart/form-data" action="/create" method="post">
-              <div
-                class="image-preview"
-                v-if="contentPost.imageData.length > 0"
-              >
-                <img
-                  class="w-75 center"
-                  :src="contentPost.imageData"
-                  
-                />
-                <p>valider votre avatar</p>
-              </div>
-
-              <div>
-                <div class="inputFile">
-                  <input
-                    name="inputFile"
-                    placeholder="Choisir un fichier"
-                    id="inputFile"
-                    type="file"
-                    class="inputFile"
-                    @change="onFileChange"
-                    accept="image/*"
-                  />
-                </div>
-              </div>
-              <button
-                type="submit"
-                @click.prevent="createPost"
-                class="btn btn-secondary btn-poster mb-3 mt-3"
-              >
-                Poster
-              </button>
-              <span
-                id="msgReturnAPI"
-                class="mx-3 text-danger"
-                v-if="user.token == null"
-                >Veuillez vous connecter</span
-              >
-              <span id="msgReturnAPI" class="mx-3" v-else>{{ msgError }}</span>
-            </form>
-            <!-- fin ajout avatar-->
+  <div class="card mb-4 mx-auto">
+    <h1>Bonjour {{ user.username }} l'Administrateur</h1>
+    <div class="row">
+      <div class="col-sm">
+        <h2>Email :</h2>
+        <p>{{ user.email }}</p>
+        <h2>Role :</h2>
+        <p v-if="user.isAdmin !== false">Administrateur</p>
+        <p v-if="user.isAdmin == false">Utilisateur</p>
+      </div>
+      <div class="col-6">
+        <!--  avatar present-->
+        <div class="card-img-top mx-auto" v-if="user.avatarUrl">
+          <div v-if="!contentPost.imageData.length > 0">
+            <p>Avatar actuel</p>
+            <img :src="user.avatarUrl" alt="..." class="w-75 center" />
           </div>
         </div>
-        <!--Box changePassword-->
-        <div id="changePassword" class="collapse">
-          <div class="modal-content">
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="InputNewPassword">Mon nouveau mot de passe</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="InputNewPassword"
-                    v-model="changePwd.newPassword"
-                  />
-                  <small id="emailHelp" class="form-text text-muted"
-                    >Au minimum 6 caractères dont une majuscule, un minuscule et
-                    un chiffre</small
-                  >
-                </div>
-                <div class="form-group">
-                  <label for="RepeatInputNewPassword"
-                    >Je confirme mon nouveau mot de passe</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="RepeatInputNewPassword"
-                    v-model="changePwd.RepeatNewPassword"
-                  />
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-success"
-                @click="changePassword"
-              >
-                Sauvergarder les modifications
-              </button>
-            </div>
-            <p id="retour-api" class="text-center">{{ retourAPI }}</p>
+        <!-- fin present avatar-->
+
+        <!-- ajout avatar-->
+        <form enctype="multipart/form-data" action="/create" method="post">
+          <div class="image-preview" v-if="contentPost.imageData.length > 0">
+            <img class="w-75 center" :src="contentPost.imageData" />
+            <p>valider votre avatar</p>
           </div>
+
+          <div>
+            <div class="inputFile">
+              <input
+                name="inputFile"
+                placeholder="Choisir un fichier"
+                id="inputFile"
+                type="file"
+                class="inputFile"
+                @change="onFileChange"
+                accept="image/*"
+              />
+            </div>
+          </div>
+          <button
+            type="submit"
+            @click.prevent="createPost"
+            class="btn btn-secondary btn-poster mb-3 mt-3"
+          >
+            Poster
+          </button>
+          <span
+            id="msgReturnAPI"
+            class="mx-3 text-danger"
+            v-if="user.token == null"
+            >Veuillez vous connecter</span
+          >
+          <span id="msgReturnAPI" class="mx-3" v-else>{{ msgError }}</span>
+        </form>
+        <!-- fin ajout avatar-->
+      </div>
+    </div>
+    <!--Box changePassword-->
+    <div id="changePassword" class="collapse">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="InputNewPassword">Mon nouveau mot de passe</label>
+              <input
+                type="password"
+                class="form-control"
+                id="InputNewPassword"
+                v-model="changePwd.newPassword"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >Au minimum 6 caractères dont une majuscule, un minuscule et un
+                chiffre</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="RepeatInputNewPassword"
+                >Je confirme mon nouveau mot de passe</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="RepeatInputNewPassword"
+                v-model="changePwd.RepeatNewPassword"
+              />
+            </div>
+          </form>
         </div>
-        <!--fin changePassword-->
-      </div>    
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" @click="changePassword">
+            Sauvergarder les modifications
+          </button>
+        </div>
+        <p id="retour-api" class="text-center">{{ retourAPI }}</p>
+      </div>
+    </div>
+    <!--fin changePassword-->
+  </div>
 </template>
 
 <script>
@@ -284,14 +268,14 @@ export default {
   border-radius: 20px;
   background-color: #c9c4c4;
   width: 80%;
-   margin: 2rem auto;
+  margin: 2rem auto;
 }
 h1 {
   margin-top: 5%;
   text-align: center;
   font-size: 1.5rem;
 }
-h2{
+h2 {
   font-size: 1.2rem;
 }
 
@@ -303,11 +287,9 @@ h2{
   margin-top: 15%;
 }
 
-
 @media screen and (max-width: 992px) {
   .cadre {
     width: 90%;
-
   }
 }
 </style>

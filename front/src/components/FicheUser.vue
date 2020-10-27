@@ -1,4 +1,4 @@
-<!-- ATTENTION ICI post definie la fiche de chaque utilisateur j'ai réutiliser la page Post pour crée une fiche utilisateur !-->
+<!-- ATTENTION ICI post definie la fiche de chaque utilisateur  !-->
 <template>
   <div class="card mb-4  mx-auto">
     <div class="card-header  d-flex justify-content-between mx-2 my-2">

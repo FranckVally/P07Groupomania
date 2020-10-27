@@ -11,15 +11,15 @@
             <h2>Role :</h2>
             <p v-if="user.isAdmin !== false">Administrateur</p>
             <p v-if="user.isAdmin == false">Utilisateur</p>
-              <!--  Bouton suppression  compte-->
-             <button 
-              type="button" 
+            <!--  Bouton suppression  compte-->
+            <button
+              type="button"
               class="btn btn-danger white d-block"
               @click="deleteAccount"
-              >
+            >
               Supprimer mon compte
-              </button>
-              <br>
+            </button>
+            <br />
 
             <button
               type="button"
@@ -46,17 +46,12 @@
                 class="image-preview"
                 v-if="contentPost.imageData.length > 0"
               >
-                <img
-                  class="w-75 center"
-                  :src="contentPost.imageData"
-                  
-                />
+                <img class="w-75 center" :src="contentPost.imageData" />
                 <p>valider votre avatar</p>
               </div>
 
               <div>
                 <div class="inputFile">
-                 
                   <input
                     name="inputFile"
                     placeholder="Choisir"
@@ -66,23 +61,25 @@
                     @change="onFileChange"
                     accept="image/*"
                   />
-                 
-              <button
-                type="submit"
-                @click.prevent="createPost"
-                class="btn btn-secondary mb-3 mt-3"
-              >
-                Poster
-              </button>
-              <span
-                id="msgReturnAPI"
-                class="mx-3 text-danger"
-                v-if="user.token == null"
-                >Veuillez vous connecter</span
-              >
-              <span id="msgReturnAPI" class="mx-3" v-else>{{ msgError }}</span>
-            </div>
-            </div>
+
+                  <button
+                    type="submit"
+                    @click.prevent="createPost"
+                    class="btn btn-secondary mb-3 mt-3"
+                  >
+                    Poster
+                  </button>
+                  <span
+                    id="msgReturnAPI"
+                    class="mx-3 text-danger"
+                    v-if="user.token == null"
+                    >Veuillez vous connecter</span
+                  >
+                  <span id="msgReturnAPI" class="mx-3" v-else>{{
+                    msgError
+                  }}</span>
+                </div>
+              </div>
             </form>
             <!-- fin ajout avatar-->
           </div>
@@ -319,13 +316,11 @@ h1 {
   margin-top: 15%;
 }
 
-
 @media screen and (max-width: 992px) {
   .cadre {
     width: 90%;
     margin-top: 3.8rem !important;
-     margin-bottom: 3.8rem !important;
-   
+    margin-bottom: 3.8rem !important;
   }
 }
 </style>

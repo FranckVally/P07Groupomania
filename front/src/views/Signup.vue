@@ -108,15 +108,13 @@ export default {
 </script>
 
 <style scope>
-
 .cadre {
   padding: 1%;
   border: black 3px solid !important;
   border-radius: 20px;
   background-color: #c9c4c4;
- margin-bottom: 10rem !important;
- margin-top: -5rem !important;
-
+  margin-bottom: 10rem !important;
+  margin-top: -5rem !important;
 }
 
 .main {
@@ -125,14 +123,11 @@ export default {
 }
 .body-intro {
   margin-top: 20%;
-
 }
 @media screen and (max-width: 900px) {
-
-.cadre{
-margin-top: 3rem !important;
-width: 90% !important ;
+  .cadre {
+    margin-top: 3rem !important;
+    width: 90% !important ;
+  }
 }
-}
-
 </style>
