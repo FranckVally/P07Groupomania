@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `database_development_groupomania` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `database_development_groupomania`;
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
 -- Host: localhost    Database: database_development_groupomania
@@ -34,7 +32,7 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +41,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (115,34,'message de Azerty','http://localhost:3000/images/jean2.jpg1603614825893.jpg','2020-10-25 08:33:45','2020-10-25 08:33:45');
+INSERT INTO `posts` VALUES (119,34,'null','http://localhost:3000/images/inputFile1603718333650.gif','2020-10-26 13:18:53','2020-10-26 13:18:53'),(127,34,'J\'aime les Lego','http://localhost:3000/images/inputFile1603827019979.jpg','2020-10-27 19:30:20','2020-10-27 19:30:20');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +87,7 @@ CREATE TABLE `users` (
   `updatedAt` date NOT NULL,
   `avatarUrl` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +96,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (31,'franck.vallyq@laposte.net','vallyq','$2b$10$Y/gzX47sgd2rdTE/It.qreRVMrOhAv2j0T/vm2nlNNobQ4kerQyJ.',0,'2020-10-24','2020-10-25','//localhost:3000/images/ressources/avatarDefaut.png'),(34,'franck.vally@laposte.net','Azerty','$2b$10$s.iQZJSD6LLbxdznyaWoSufTMeBiFzNQeAfdaPsNy01HKvMjBkWaO',1,'2020-10-25','2020-10-25','//localhost:3000/images/ressources/avatarDefaut.png'),(37,'franck.vallyz@laposte.net','vallyz','$2b$10$mHAZN9nfyD4Ll1LFr8jYdeCWutUEF0FLXtmm.ntgq/lpbDh7P.I0e',0,'2020-10-25','2020-10-25',NULL);
+INSERT INTO `users` VALUES (31,'Admin@admin.fr','Admin','$2b$10$Y/gzX47sgd2rdTE/It.qreRVMrOhAv2j0T/vm2nlNNobQ4kerQyJ.',1,'2020-10-24','2020-10-25','//localhost:3000/images/ressources/avatarDefaut.png'),(34,'franck.vally@laposte.net','Azerty','$2b$10$s.iQZJSD6LLbxdznyaWoSufTMeBiFzNQeAfdaPsNy01HKvMjBkWaO',1,'2020-10-25','2020-10-27','http://localhost:3000/images/inputFile1603827054247.jpg'),(37,'franck.vallyz@laposte.net','vallyz','$2b$10$mHAZN9nfyD4Ll1LFr8jYdeCWutUEF0FLXtmm.ntgq/lpbDh7P.I0e',0,'2020-10-25','2020-10-27','//localhost:3000/images/ressources/avatarDefaut.png'),(38,'franck.vallyr@laposte.net','VALLYr','$2b$10$VyOkirB6cF.8J8SgRFlyj.H1W1UZPHSuAqk4x4bNnalt7UcgCS/zu',0,'2020-10-25','2020-10-26','//localhost:3000/images/ressources/avatarDefaut.png'),(41,'franck.vallyx@laposte.net','vallyx','$2b$10$YwssIlG9YV9XxUSya02aMuGwzrGl9RSg/.lMQ0.7R1./FYkQSnmQe',0,'2020-10-27','2020-10-27','//localhost:3000/images/ressources/avatarDefaut.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -111,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-25 18:37:47
+-- Dump completed on 2020-10-27 20:34:40
