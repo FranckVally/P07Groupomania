@@ -124,7 +124,7 @@ export default {
   text-align: center;
 }
 .body-intro {
-  margin-top: 25%;
+  margin-top: 20%;
 
 }
 @media screen and (max-width: 900px) {
