@@ -22,5 +22,20 @@ const storage = multer.diskStorage({
 		callback(null, name + Date.now() + '.' + extension);
 	},
 });
-
+var upload = multer({
+	storage: storage,
+	fileFilter: (req, file, cb) => {
+	  if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg" || file.mimetype == "image/gif") {
+		cb(null, true);
+	  } else {
+		cb(null, false);
+		return cb(new Error('Only .png, .gif  .jpg and .jpeg  format allowed!'));
+	  }
+	}
+  
+  });
+  
+  
 module.exports = multer({storage: storage}).single('inputFile');
+
+//module.exports = multer({storage: storage}).single('inputFile');
