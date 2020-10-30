@@ -3,7 +3,7 @@ let models = require('../models');
 let utils = require('../utils/jwtUtils');
 const fs = require('fs');
 
-
+const TEXTE_REGEX = /^[a-z\d\-_\s].{0,250}/;
 
 //Création d'un message
 exports.create = (req, res) => {
@@ -27,7 +27,12 @@ exports.create = (req, res) => {
                 };
                 if ((content == 'null' && attachmentURL == null)) {
                     res.status(400).json({ error: 'Rien à publier' })
-                } else {
+                } 
+                if (!TEXTE_REGEX.test(req.body.content)) {
+                    res.status(400).json({ error : 'must be length 0 - 250)'})
+                }
+                
+                else {
                     models.Post.create({
                         content: content,
                         attachement: attachmentURL,
